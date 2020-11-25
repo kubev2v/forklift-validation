@@ -1,0 +1,14 @@
+{
+  "name": "my_vm",
+  "config": {
+    "cpuAffinity": "ikbib",
+    "hardware": {
+      "device": [
+        { "key": "disk-200", "path": "/x/y/hard_disk1.vmdk", "class": "VirtualIDEDisk" },
+        { "key": "disk-201", "path": "/x/y/hard_disk2.vmdk", "class": "VirtualSCSIPassthrough" },
+        { "key": "gpu-200", "class": "VirtualPCIPassthrough" }
+      ]
+    }
+  }
+}
+

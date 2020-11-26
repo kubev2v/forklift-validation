@@ -8,7 +8,7 @@ has_scsi_passthrough_device {
 concerns[reason] {
     has_scsi_passthrough_device
     reason := {
-        "category": "critical",
+        "level": "critical",
         "message": "SCSI passthrough devices are not supported by OpenShift Virtualization. The VM cannot be migrated unless the passthrough device is removed."
     }
 }

@@ -5,8 +5,10 @@ has_cpu_affinity {
     count(cpu_affinity) != 0
 }
 
-concerns[{"level": lvl, "message": msg}] {
+concerns[reason] {
     has_cpu_affinity
-    lvl := "warning"
-    msg := "CPU affinity is not supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment."
+    reason := {
+        "level": "warning",
+        "message": "CPU affinity is not supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment."
+    }
 }

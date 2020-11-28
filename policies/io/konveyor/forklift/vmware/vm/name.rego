@@ -1,9 +1,8 @@
 package io.konveyor.forklift.vmware
 
 valid_vm_name {
-    name := input.name
-    regex.match("^[a-z0-9][a-z0-9-]*[a-z0-9]$", name)
-    count(name) <= 64
+    regex.match("^[a-z0-9][a-z0-9-]*[a-z0-9]$", vm.name)
+    count(vm.name) <= 64
 }
 
 concerns[reason] {

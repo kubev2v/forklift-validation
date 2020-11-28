@@ -1,0 +1,7 @@
+{
+  "input": {
+    "provider_type": "vsphere",
+    "provider_name": "vcenter-test",
+    "vm_moref": "vm-1234"
+  }
+}

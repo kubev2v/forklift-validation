@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 has_scsi_passthrough_device {
     some i
-    input.config.hardware.device[i].class == "VirtualSCSIPassthrough"
+    vm.devices[i].class == "VirtualSCSIPassthrough"
 }
 
 concerns[reason] {

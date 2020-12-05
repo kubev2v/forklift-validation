@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_cpu_affinity {
-    cpu_affinity := input.config.cpuAffinity
+    cpu_affinity := vm.cpuAffinity
     count(cpu_affinity) != 0
 }
 

@@ -1,5 +1,0 @@
-{
-	"provider_type": "vsphere",
-	"provider_name": "vmware-migeng-lab",
-	"vm_moref": "vm-2841"
-}

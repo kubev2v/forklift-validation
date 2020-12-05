@@ -6,6 +6,7 @@ valid_vm_name {
 }
 
 concerns[reason] {
+    not is_null(vm)
     not valid_vm_name
     reason := {
         "level": "critical",

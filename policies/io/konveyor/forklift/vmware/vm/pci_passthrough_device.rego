@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 has_pci_passthrough_device {
     some i
-    input.config.hardware.device[i].class == "VirtualPCIPassthrough"
+    vm.devices[i].class == "VirtualPCIPassthrough"
 }
 
 concerns[reason] {

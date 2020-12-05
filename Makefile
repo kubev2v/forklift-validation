@@ -1,7 +1,7 @@
 all: test
 
 test: opa-bin
-	${OPA} test policies --explain fails
+	ENVIRONMENT=test ${OPA} test policies --explain fails
 
 # Find or download opa
 opa-bin:

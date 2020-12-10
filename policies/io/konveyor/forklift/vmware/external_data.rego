@@ -2,11 +2,9 @@ package io.konveyor.forklift.vmware
 
 runtime := opa.runtime()
 
-provider_type      := input.provider_type
-provider_name      := input.provider_name
-provider_namespace := runtime.env["POD_NAMESPACE"]
+provider           := input.provider
 inventory_hostname := runtime.env["INVENTORY_HOSTNAME"]
-inventory_base_url := concat("/", ["https:/", inventory_hostname, "namespaces", provider_namespace, "providers", provider_type, provider_name])
+inventory_base_url := concat("/", ["https:/", inventory_hostname, "namespaces", provider.namespace, "providers", provider.type, provider.name])
 
 default is_test = false
 

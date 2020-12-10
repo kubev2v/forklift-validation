@@ -1,7 +1,10 @@
 {
   "input": {
-    "provider_type": "vsphere",
-    "provider_name": "vcenter-test",
+    "provider": {
+      "namespace": "test_ns",
+      "type": "vsphere",
+      "name": "vcenter-test"
+    },
     "vm_moref": "vm-1234"
   }
 }

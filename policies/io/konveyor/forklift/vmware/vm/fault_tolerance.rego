@@ -9,6 +9,6 @@ concerns[flag] {
     flag := {
         "category": "warning",
         "label": "Fault tolerance",
-        "assessment": "Fault tolerance is not supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment."
+        "assessment": "Fault tolerance is not supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment"
     }
 }

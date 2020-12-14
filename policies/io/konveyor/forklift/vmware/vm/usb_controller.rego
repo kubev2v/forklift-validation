@@ -9,6 +9,6 @@ concerns[flag] {
     flag := {
         "category": "warning",
         "label": "USB controller detected",
-        "assessment": "USB controllers are not supported by OpenShift Virtualization. The VM can be migrated but the devices attached to the USB controller will not be migrated."
+        "assessment": "USB controllers are not supported by OpenShift Virtualization. The VM can be migrated but the devices attached to the USB controller will not be migrated"
     }
 }

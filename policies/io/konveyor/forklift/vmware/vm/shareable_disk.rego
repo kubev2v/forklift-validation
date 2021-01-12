@@ -10,6 +10,6 @@ concerns[flag] {
     flag := {
         "category": "warning",
         "label": "Shareable disk detected",
-        "assessment": "Shared disks are only supported by certain OpenShift Virtualization storage configurations. Ensure that the correct storage is selected fr the disk"
+        "assessment": "Shared disks are only supported by certain OpenShift Virtualization storage configurations. Ensure that the correct storage is selected for the disk"
     }
 }

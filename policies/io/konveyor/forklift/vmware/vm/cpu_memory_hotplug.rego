@@ -3,11 +3,11 @@ package io.konveyor.forklift.vmware
 default hotplug_enabled = false
 
 hotplug_enabled = true {
-    vm.cpuHostAddEnabled == true
+    vm.cpuHotAddEnabled == true
 }
 
 hotplug_enabled = true {
-    vm.cpuHostRemoveEnabled == true
+    vm.cpuHotRemoveEnabled == true
 }
 
 hotplug_enabled = true {

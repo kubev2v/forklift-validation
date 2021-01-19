@@ -1,21 +1,21 @@
 package io.konveyor.forklift.vmware
 
-default hotplug_enabled = false
+default has_hotplug_enabled = false
 
-hotplug_enabled = true {
+has_hotplug_enabled = true {
     vm.cpuHotAddEnabled == true
 }
 
-hotplug_enabled = true {
+has_hotplug_enabled = true {
     vm.cpuHotRemoveEnabled == true
 }
 
-hotplug_enabled = true {
+has_hotplug_enabled = true {
     vm.memoryHotAddEnabled == true
 }
 
 concerns[flag] {
-    hotplug_enabled
+    has_hotplug_enabled
     flag := {
         "category": "warning",
         "label": "CPU/memory hotplug",

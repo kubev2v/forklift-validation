@@ -1,11 +1,11 @@
 package io.konveyor.forklift.vmware
 
-has_balooned_memory {
+has_ballooned_memory {
     vm.balloonedMemory > 0
 }
 
 concerns[flag] {
-    has_balooned_memory
+    has_ballooned_memory
     flag := {
         "category": "warning",
         "label": "Memory ballooning detected",

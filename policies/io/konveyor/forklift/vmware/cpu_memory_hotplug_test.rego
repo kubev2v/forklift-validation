@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 test_with_hotplug_disabled {
     mock_vm := {
-        "name": "my-vm",
+        "name": "test",
         "cpuHotAddEnabled": false,
         "cpuHotRemoveEnabled": false,
         "memoryHotAddEnabled": false
@@ -13,7 +13,7 @@ test_with_hotplug_disabled {
 
 test_with_cpu_hot_add_enabled {
     mock_vm := {
-        "name": "my-vm",
+        "name": "test",
         "cpuHotAddEnabled": true,
         "cpuHotRemoveEnabled": false,
         "memoryHotAddEnabled": false
@@ -24,7 +24,7 @@ test_with_cpu_hot_add_enabled {
 
 test_with_cpu_hot_remove_enabled {
     mock_vm := {
-        "name": "my-vm",
+        "name": "test",
         "cpuHotAddEnabled": false,
         "cpuHotRemoveEnabled": true,
         "memoryHotAddEnabled": false
@@ -35,7 +35,7 @@ test_with_cpu_hot_remove_enabled {
 
 test_with_memory_hot_add_enabled {
     mock_vm := {
-        "name": "my-vm",
+        "name": "test",
         "cpuHotAddEnabled": false,
         "cpuHotRemoveEnabled": false,
         "memoryHotAddEnabled": true

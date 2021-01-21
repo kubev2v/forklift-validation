@@ -5,7 +5,8 @@ To test the rules in the repository, you can install Open Policy Agent CLI (see 
 Then, you can evaluate the example input:
 
 ```
-$ opa eval --data policies --input example_inputs/single_vm.json "data.io.konveyor.forklift.vmware"
+$ export INVENTORY_HOSTNAME=forklift-inventory-openshift-migration.apps.cluster.company.com
+$ opa eval --data policies --input example_inputs/single_vm.json "data.io.konveyor.forklift.vmware.concerns"
 ```
 
 You can also run the unit tests with:

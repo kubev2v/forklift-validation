@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 test_valid_vm_name {
-    mock_vm := { "name": "my-vm" }
+    mock_vm := { "name": "test" }
     results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
     count(results) == 0
 }

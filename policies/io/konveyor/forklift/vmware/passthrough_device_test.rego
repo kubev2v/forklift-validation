@@ -1,10 +1,19 @@
 package io.konveyor.forklift.vmware
 
-test_without_pci_passthrough_device {
+test_with_no_device {
     mock_vm := {
-        "name": "my-vm",
+        "name": "test",
+        "devices": []
+    }
+    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    count(results) == 0
+}
+
+test_with_other_xyz_device {
+    mock_vm := {
+        "name": "test",
         "devices": [
-            { "key": "disk-200", "path": "/x/y/hard_disk1.vmdk", "class": "VirtualIDEDisk" },
+            { "kind": "VirtualXYZEthernetCard" }
         ]
     }
     results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
@@ -13,10 +22,9 @@ test_without_pci_passthrough_device {
 
 test_with_pci_passthrough_device {
     mock_vm := {
-        "name": "my-vm",
+        "name": "test",
         "devices": [
-            { "key": "disk-200", "path": "/x/y/hard_disk1.vmdk", "class": "VirtualIDEDisk" },
-            { "key": "gpu-200", "class": "VirtualPCIPassthrough" }
+            { "kind": "VirtualPCIPassthrough" }
         ]
     }
     results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm

@@ -12,8 +12,14 @@ test_vm_name_too_long {
     count(results) == 1
 }
 
-test_vm_name_invalid_char {
+test_vm_name_invalid_char_underscore {
     mock_vm := { "name": "my_vm" }
+    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    count(results) == 1
+}
+
+test_vm_name_invalid_char_slash {
+    mock_vm := { "name": "my/vm" }
     results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
     count(results) == 1
 }

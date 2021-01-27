@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: forklift-validation
+  labels:
+    app: forklift-validation
+spec:
+  type: NodePort
+  selector:
+    app: forklift-validation
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8181
+      targetPort: 8181

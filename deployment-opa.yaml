@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forklift-validation
+  labels:
+    app: forklift-validation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forklift-validation
+  template:
+    metadata:
+      labels:
+        app: forklift-validation
+      name: forklift-validation
+    spec:
+      containers:
+      - name: forklift-validation
+        image: 'quay.io/pmcgowan/forklift-validation:latest'
+        ports:
+        - name: http
+          containerPort: 8181
+        env:
+        - name: FORKLIFT_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace

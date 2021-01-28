@@ -5,7 +5,7 @@ metadata:
   labels:
     app: forklift-validation
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: forklift-validation
   ports:

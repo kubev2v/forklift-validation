@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: forklift-validation
-        image: 'quay.io/pmcgowan/forklift-validation:get_running_in_openshift'
+        image: 'quay.io/konveyor/forklift-validation:latest'
         ports:
         - name: http
           containerPort: 8181

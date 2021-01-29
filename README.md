@@ -1,40 +1,75 @@
 # Konveyor > Forklift > Validation Rules
 
-To test the rules in the repository, you can install Open Policy Agent CLI (see [OPA doc](https://www.openpolicyagent.org/docs/latest/#running-opa)).
+When running as the `forklift-validation` pod in OpenShift, the rules can be called by making an https POST call to `<pod>/v1/data/io/konveyor/forklift/vmware/concerns`
 
-Then, you can evaluate the example input:
+The call must provide a JSON payload containing the VMware provider namespace and name, and VM Managed Object Reference, in the following format:
 
 ```
-$ export INVENTORY_HOSTNAME=forklift-inventory-openshift-migration.apps.cluster.company.com
-$ opa eval --data policies --input example_inputs/single_vm.json "data.io.konveyor.forklift.vmware.concerns"
+{
+   "input": {
+      "provider": {
+        "namespace": "openshift-migration",
+        "name": "test"
+      },
+      "vm_moref": "vm-431"
+    }
+}
 ```
 
-You can also run the unit tests with:
+The return is a JSON structure containing the concerns relevant to that VM, for example:
+
+```
+{
+    "result": [
+        {
+            "assessment": "USB controllers are not currently supported by OpenShift Virtualization. The VM can be migrated but the devices attached to the USB controller will not be migrated.",
+            "category": "Warning",
+            "label": "USB controller detected"
+        },
+        {
+            "assessment": "Host/Node HA is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
+            "category": "Warning",
+            "label": "VM running in HA-enabled cluster"
+        },
+        {
+            "assessment": "NUMA node affinity is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
+            "category": "Warning",
+            "label": "NUMA node affinity detected"
+        },
+        {
+            "assessment": "Hot pluggable CPU or memory is not currently supported by OpenShift Virtualization. Review CPU or memory configuration after migration.",
+            "category": "Warning",
+            "label": "CPU/Memory hotplug detected"
+        },
+        {
+            "assessment": "CPU affinity is not supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
+            "category": "Warning",
+            "label": "CPU affinity detected"
+        },
+        {
+            "assessment": "Distributed resource scheduling is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
+            "category": "Information",
+            "label": "VM running in a DRS-enabled cluster"
+        }
+    ]
+}
+```
+
+The rules in the repository can be tested from the command lineusing the Open Policy Agent CLI (see [OPA doc](https://www.openpolicyagent.org/docs/latest/#running-opa)).
+
+Then you can run the unit tests with:
 
 ```
 $ opa test policies --explain fails
 ```
 
-# Running OPA as a REST API
-
-The Dockerfile allows you to create a container image.
+Whenever the rules are edited or updated, the relevant `policies/io/konveyor/forklift/<provider>/rules_version.rego` file **must** be updated with an incremented number, for example:
 
 ```
-$ podman build -t quay.io/example.com/opa:latest .
-```
-
-Then, this image can be used to start the OPA REST server.
-
-```
-$ podman run --detach --rm --publish 8181 quay.io/example.com/opa:latest
-```
-
-The image is very basic right now, so it will listen on port 8181.
-You can ask for a decision using the example input file:
-
-```
-$ curl localhost:8181/v1/data/io/konveyor/forklift/vmware \
-    -d @example_inputs/api_single_vm.json \
-    -H 'Content-Type: application/json'
+rules_version[version] {
+  version := {
+    "version": 3
+  }
+}
 ```
 

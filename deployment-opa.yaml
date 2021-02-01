@@ -22,7 +22,7 @@ spec:
         - name: http
           containerPort: 8181
         env:
-        - name: FORKLIFT_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
+        - name: API_TLS_CERTIFICATE
+          value: /var/run/secrets/forklift-inventory-serving-cert/tls.crt
+        - name: API_TLS_KEY
+          value: /var/run/secrets/forklift-inventory-serving-cert/tls.key

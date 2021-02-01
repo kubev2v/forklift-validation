@@ -10,7 +10,7 @@ vm                 := http.send({"url": inventory_url,
                       "method": "get",
                       "tls_client_cert_file": runtime.env["API_TLS_CERTIFICATE"],
                       "tls_client_key_file": runtime.env["API_TLS_KEY"],
-                      "tls_ca_cert": runtime.env["CA_TLS_CERTIFICATE"]}).body
+                      "tls_ca_cert_file": runtime.env["CA_TLS_CERTIFICATE"]}).body
 
 debug {
   trace(sprintf("** debug ** inventory_hostname: %v", [inventory_hostname]))

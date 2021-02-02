@@ -11,7 +11,8 @@ ca_tls_cert_file                := runtime.env["CA_TLS_CERTIFICATE"]
 inventory_hostname              := concat(".", ["forklift-inventory", namespace, "svc", "cluster", "local"])
 inventory_socket                := concat(":", [inventory_hostname, forklift_inventory_service_port])
 inventory_url                   := concat("/", ["https:/", inventory_socket, "namespaces", provider.namespace, "providers", "vsphere", provider.name, "workloads", vm_moref])
-vm                              := http.send({"url": inventory_url, "method": "get", "tls_client_cert_file": tls_cert_file, "tls_client_key_file": tls_key_file, "tls_ca_cert_file": ca_tls_cert_file}).body
+#vm                              := http.send({"url": inventory_url, "method": "get", "tls_client_cert_file": tls_cert_file, "tls_client_key_file": tls_key_file, "tls_ca_cert_file": ca_tls_cert_file}).body
+vm                              := http.send({"url": inventory_url, "method": "get", "tls_ca_cert_file": ca_tls_cert_file}).body
 
 debug {
 	trace(sprintf("** debug ** inventory_hostname: %v", [inventory_hostname]))

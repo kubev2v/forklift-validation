@@ -22,9 +22,9 @@ template:
           - name: http
             containerPort: 8181
         env:
-          - name: API_TLS_CERTIFICATE
+          - name: INVENTORY_TLS_CERTIFICATE
             value: /var/run/secrets/forklift-inventory-serving-cert/tls.crt
-          - name: API_TLS_KEY
+          - name: INVENTORY_TLS_KEY
             value: /var/run/secrets/forklift-inventory-serving-cert/tls.key
           - name: CA_TLS_CERTIFICATE
             value: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt

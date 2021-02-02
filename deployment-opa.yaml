@@ -29,3 +29,5 @@ template:
               fieldRef:
                 apiVersion: v1
                 fieldPath: metadata.namespace
+          - name: INVENTORY_SERVICE
+            value: forklift-inventory

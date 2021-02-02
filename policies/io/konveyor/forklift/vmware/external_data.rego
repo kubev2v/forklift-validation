@@ -16,8 +16,8 @@ vm                              := http.send({"url": inventory_url, "method": "g
 debug {
 	trace(sprintf("** debug ** inventory_hostname: %v", [inventory_hostname]))
 	trace(sprintf("** debug ** inventory_url: %v", [inventory_url]))
-	trace(sprintf("** debug ** api_tls_cert_file: %v", [api_tls_cert_file]))
-	trace(sprintf("** debug ** api_tls_key_file: %v", [api_tls_key_file]))
+	trace(sprintf("** debug ** tls_cert_file: %v", [tls_cert_file]))
+	trace(sprintf("** debug ** tls_key_file: %v", [tls_key_file]))
 	trace(sprintf("** debug ** ca_tls_cert_file: %v", [ca_tls_cert_file]))
 	trace(sprintf("** debug ** vm name: %v", [vm.name]))
 }

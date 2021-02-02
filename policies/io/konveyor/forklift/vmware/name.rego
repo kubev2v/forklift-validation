@@ -1,10 +1,15 @@
 package io.konveyor.forklift.vmware
 
 default valid_input   = true
+default valid_vm      = false
 default valid_vm_name = false
 
 valid_input = false {
-  is_null(data.io.konveyor.forklift.vmware.vm)
+    is_null(data.io.konveyor.forklift.vmware.vm)
+}
+
+valid_vm = true {
+    is_string(data.io.konveyor.forklift.vmware.vm.name)
 }
 
 valid_vm_name = true {
@@ -14,6 +19,7 @@ valid_vm_name = true {
 
 concerns[flag] {
     valid_input
+    valid_vm
     not valid_vm_name
     flag := {
         "category": "Critical",

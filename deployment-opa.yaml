@@ -22,10 +22,6 @@ template:
           - name: http
             containerPort: 8181
         env:
-          - name: INVENTORY_TLS_CERTIFICATE
-            value: /var/run/secrets/forklift-inventory-serving-cert/tls.crt
-          - name: INVENTORY_TLS_KEY
-            value: /var/run/secrets/forklift-inventory-serving-cert/tls.key
           - name: CA_TLS_CERTIFICATE
             value: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
           - name: NAMESPACE
@@ -33,11 +29,3 @@ template:
               fieldRef:
                 apiVersion: v1
                 fieldPath: metadata.namespace
-        volumeMounts:
-          - name: forklift-inventory-serving-cert
-            mountPath: /var/run/secrets/forklift-inventory-serving-cert
-    volumes:
-      - name: forklift-inventory-serving-cert
-        secret:
-          secretName: forklift-inventory-serving-cert
-          defaultMode: 420

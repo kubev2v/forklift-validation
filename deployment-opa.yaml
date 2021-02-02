@@ -1,28 +1,43 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: forklift-validation
-  labels:
-    app: forklift-validation
+name: forklift-validation
+labels:
+  app: forklift-validation
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
+replicas: 1
+selector:
+  matchLabels:
+    app: forklift-validation
+template:
+  metadata:
+    labels:
       app: forklift-validation
-  template:
-    metadata:
-      labels:
-        app: forklift-validation
-      name: forklift-validation
-    spec:
-      containers:
+    name: forklift-validation
+  spec:
+    containers:
       - name: forklift-validation
         image: 'quay.io/konveyor/forklift-validation:latest'
         ports:
-        - name: http
-          containerPort: 8181
+          - name: http
+            containerPort: 8181
         env:
-        - name: API_TLS_CERTIFICATE
-          value: /var/run/secrets/forklift-inventory-serving-cert/tls.crt
-        - name: API_TLS_KEY
-          value: /var/run/secrets/forklift-inventory-serving-cert/tls.key
+          - name: API_TLS_CERTIFICATE
+            value: /var/run/secrets/forklift-inventory-serving-cert/tls.crt
+          - name: API_TLS_KEY
+            value: /var/run/secrets/forklift-inventory-serving-cert/tls.key
+          - name: CA_TLS_CERTIFICATE
+            value: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+        volumeMounts:
+          - name: forklift-inventory-serving-cert
+            mountPath: /var/run/secrets/forklift-inventory-serving-cert
+    volumes:
+      - name: forklift-inventory-serving-cert
+        secret:
+          secretName: forklift-inventory-serving-cert
+          defaultMode: 420

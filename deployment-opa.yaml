@@ -31,8 +31,6 @@ template:
                 fieldPath: metadata.namespace
           - name: INVENTORY_SERVICE
             value: forklift-inventory
-          - name: API_TLS_ENABLED
-            value: 'false'
         volumeMounts:
           - name: forklift-inventory-serving-cert
             mountPath: /var/run/secrets/forklift-validation-serving-cert

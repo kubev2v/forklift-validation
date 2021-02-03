@@ -2,14 +2,13 @@ package io.konveyor.forklift.vmware
 
 run_concerns = {
     "rules_version": RULES_VERSION,
+    "errors": status,
     "concerns": concerns
 }
 
-concerns[message] {
+status[message] {
     not valid_vm
-    message := {
-        "error": "No VM found that matches input parameters"
-    }
+    message := "No VM found that matches input parameters"
 }
 
 validate = {

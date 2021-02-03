@@ -24,10 +24,20 @@ template:
         env:
           - name: CA_TLS_CERTIFICATE
             value: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
-          - name: NAMESPACE
+          - name: POD_NAMESPACE
             valueFrom:
               fieldRef:
                 apiVersion: v1
                 fieldPath: metadata.namespace
           - name: INVENTORY_SERVICE
             value: forklift-inventory
+          - name: API_TLS_ENABLED
+            value: 'false'
+        volumeMounts:
+          - name: forklift-inventory-serving-cert
+            mountPath: /var/run/secrets/forklift-inventory-serving-cert
+    volumes:
+      - name: forklift-inventory-serving-cert
+        secret:
+          secretName: forklift-inventory-serving-cert
+          defaultMode: 420

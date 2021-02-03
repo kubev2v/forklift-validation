@@ -35,9 +35,9 @@ template:
             value: 'false'
         volumeMounts:
           - name: forklift-inventory-serving-cert
-            mountPath: /var/run/secrets/forklift-inventory-serving-cert
+            mountPath: /var/run/secrets/forklift-validation-serving-cert
     volumes:
-      - name: forklift-inventory-serving-cert
+      - name: forklift-validation-serving-cert
         secret:
-          secretName: forklift-inventory-serving-cert
+          secretName: forklift-validation-serving-cert
           defaultMode: 420

@@ -6,6 +6,7 @@ COPY policies /usr/share/opa/policies/
 ENTRYPOINT ["/usr/bin/opa", \
             "run", \
             "--server", \
-            "--tls-cert-file", "/var/run/secrets/forklift-inventory-serving-cert/tls.crt", \
-            "--tls-private-key-file", "/var/run/secrets/forklift-inventory-serving-cert/tls.key", \
+            "--tls-cert-file", "/var/run/secrets/forklift-validation-serving-cert/tls.crt", \
+            "--tls-private-key-file", "/var/run/secrets/forklift-validation-serving-cert/tls.key", \
+            "--tls-ca-cert-file", "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt", \
             "/usr/share/opa"]

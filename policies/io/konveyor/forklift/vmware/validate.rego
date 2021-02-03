@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 run_concerns = {
-    "rules_version": VERSION,
+    "rules_version": RULES_VERSION,
     "concerns": concerns
 }
 

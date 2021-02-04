@@ -9,10 +9,11 @@ if [ "$TLS_ENABLED" == "true" ]; then
     echo "ERROR: TLS_CERT_FILE and/or TLS_KEY_FILE variables not defined correctly"
     exit 1 # terminate and indicate error
   fi
-  if [ -f "$TLS_CA_CERT_FILE" ]; then
-    CMD="$CMD --tls-ca-cert-file $TLS_CA_CERT_FILE"
+  if [ -f "$CA_TLS_CERTIFICATE" ]; then
+    CMD="$CMD --tls-ca-cert-file $CA_TLS_CERTIFICATE"
   fi
 fi
 CMD="$CMD /usr/share/opa"
+echo "$CMD"
 
 exec "$CMD"

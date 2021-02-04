@@ -13,7 +13,7 @@ if [ "$TLS_ENABLED" == "true" ]; then
     CMD="$CMD --tls-ca-cert-file $CA_TLS_CERTIFICATE"
   fi
 fi
-CMD="$CMD /usr/share/opa"
+CMD="$CMD /usr/share/opa/policies"
 echo "$CMD"
 
-exec "$CMD"
+exec $CMD

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-CMD="/usr/bin/$2 run --server"
+CMD="/usr/bin/$1 run --server"
 if [ "$TLS_ENABLED" == "true" ]; then
   if [ -f "$TLS_CERT_FILE" ] && [ -f "$TLS_KEY_FILE" ]; then
     CMD="$CMD --tls-cert-file $TLS_CERT_FILE --tls-private-key-file $TLS_KEY_FILE"

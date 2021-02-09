@@ -6,5 +6,5 @@ COPY entrypoint.sh /
 COPY $OPA /usr/bin/
 RUN chmod 0755 /usr/bin/$OPA
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh", "$OPA"]
 #CMD [$OPA]

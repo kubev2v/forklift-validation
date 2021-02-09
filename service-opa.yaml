@@ -1,6 +1,8 @@
 kind: Service
 apiVersion: v1
 metadata:
+  annotations:
+    service.beta.openshift.io/serving-cert-secret-name: forklift-validation-serving-cert
   name: forklift-validation
   labels:
     app: forklift-validation

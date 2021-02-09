@@ -1,6 +1,6 @@
 # Konveyor > Forklift > Validation Rules
 
-When running as the `forklift-validation` pod in OpenShift, the rules can be called by making an https POST call to `<pod>/v1/data/io/konveyor/forklift/vmware/concerns`
+When running as the `forklift-validation` pod in OpenShift, the rules can be called by making an https POST call to `<pod>/v1/data/io/konveyor/forklift/vmware/validate`
 
 The call must provide a JSON payload containing the VMware provider namespace and name, and VM Managed Object Reference, in the following format:
 
@@ -20,42 +20,62 @@ The return is a JSON structure containing the concerns relevant to that VM, for 
 
 ```
 {
-    "result": [
-        {
-            "assessment": "USB controllers are not currently supported by OpenShift Virtualization. The VM can be migrated but the devices attached to the USB controller will not be migrated.",
-            "category": "Warning",
-            "label": "USB controller detected"
-        },
-        {
-            "assessment": "Host/Node HA is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
-            "category": "Warning",
-            "label": "VM running in HA-enabled cluster"
-        },
-        {
-            "assessment": "NUMA node affinity is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
-            "category": "Warning",
-            "label": "NUMA node affinity detected"
-        },
-        {
-            "assessment": "Hot pluggable CPU or memory is not currently supported by OpenShift Virtualization. Review CPU or memory configuration after migration.",
-            "category": "Warning",
-            "label": "CPU/Memory hotplug detected"
-        },
-        {
-            "assessment": "CPU affinity is not supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
-            "category": "Warning",
-            "label": "CPU affinity detected"
-        },
-        {
-            "assessment": "Distributed resource scheduling is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
-            "category": "Information",
-            "label": "VM running in a DRS-enabled cluster"
-        }
-    ]
+    "result": {
+        "concerns": [
+            {
+                "assessment": "CPU affinity is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
+                "category": "Warning",
+                "label": "CPU affinity detected"
+            },
+            {
+                "assessment": "Distributed resource scheduling is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
+                "category": "Information",
+                "label": "VM running in a DRS-enabled cluster"
+            },
+            {
+                "assessment": "NUMA node affinity is not currently supported by OpenShift Virtualization. The VM can be migrated but it will not have this feature in the target environment.",
+                "category": "Warning",
+                "label": "NUMA node affinity detected"
+            },
+            {
+                "assessment": "Hot pluggable CPU or memory is not currently supported by OpenShift Virtualization. Review CPU or memory configuration after migration.",
+                "category": "Warning",
+                "label": "CPU/Memory hotplug detected"
+            }
+        ],
+        "errors": [],
+        "rules_version": 1
+    }
 }
 ```
 
-The rules in the repository can be tested from the command lineusing the Open Policy Agent CLI (see [OPA doc](https://www.openpolicyagent.org/docs/latest/#running-opa)).
+An error in the JSON body of the POST request will be returned as:
+
+```
+{
+    "result": {
+        "concerns": [],
+        "errors": [
+            "No VM found that matches input parameters"
+        ],
+        "rules_version": 1
+    }
+}
+```
+
+The rules versions can be queried by making a GET to `<pod>/v1/data/io/konveyor/forklift/vmware/rules_version`
+
+This will return a JSON structure such as:
+
+```
+{
+    "result": {
+        "rules_version": 1
+    }
+}
+```
+
+The rules in the repository can be tested from the command line using the Open Policy Agent CLI (see [OPA doc](https://www.openpolicyagent.org/docs/latest/#running-opa)).
 
 Then you can run the unit tests with:
 
@@ -66,10 +86,6 @@ $ opa test policies --explain fails
 Whenever the rules are edited or updated, the relevant `policies/io/konveyor/forklift/<provider>/rules_version.rego` file **must** be updated with an incremented number, for example:
 
 ```
-rules_version[version] {
-  version := {
-    "version": 3
-  }
-}
+RULES_VERSION := 2
 ```
 

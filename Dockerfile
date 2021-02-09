@@ -5,6 +5,5 @@ COPY policies /usr/share/opa/policies/
 COPY entrypoint.sh /
 COPY $OPA /usr/bin/opa
 RUN chmod 0755 /usr/bin/opa && chmod 0755 /entrypoint.sh
-
 ENTRYPOINT /entrypoint.sh
 

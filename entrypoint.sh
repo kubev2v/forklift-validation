@@ -14,5 +14,6 @@ if [ "$TLS_ENABLED" == "true" ]; then
   fi
 fi
 CMD="$CMD /usr/share/opa/policies"
+echo $CMD
 
-exec $CMD
+#exec $CMD

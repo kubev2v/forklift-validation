@@ -7,4 +7,4 @@ COPY $OPA /usr/bin/
 RUN chmod 0755 /usr/bin/$OPA && chmod 0755 /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD [$OPA]
+CMD ["$OPA"]

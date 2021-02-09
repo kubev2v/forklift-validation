@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-CMD="/usr/bin/opa run --server"
+CMD="/usr/bin/$1 run --server"
 if [ "$TLS_ENABLED" == "true" ]; then
   if [ -f "$TLS_CERT_FILE" ] && [ -f "$TLS_KEY_FILE" ]; then
     CMD="$CMD --tls-cert-file $TLS_CERT_FILE --tls-private-key-file $TLS_KEY_FILE"
@@ -14,6 +14,5 @@ if [ "$TLS_ENABLED" == "true" ]; then
   fi
 fi
 CMD="$CMD /usr/share/opa/policies"
-echo "$CMD"
 
-#exec $CMD
+exec $CMD

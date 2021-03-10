@@ -1,6 +1,6 @@
 package io.konveyor.forklift.vmware
 
-RULES_VERSION := 2
+RULES_VERSION := 3
 
 rules_version = {
     "rules_version": RULES_VERSION

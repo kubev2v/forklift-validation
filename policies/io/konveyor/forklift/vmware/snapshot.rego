@@ -9,6 +9,6 @@ concerns[flag] {
     flag := {
         "category": "Information",
         "label": "VM snapshot detected",
-        "assessment": "Warm migration may not be possible for this VM"
+        "assessment": "Online snapshots are not currently supported in OpenShift Virtualization."
     }
 }

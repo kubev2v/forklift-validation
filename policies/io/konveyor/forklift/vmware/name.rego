@@ -24,6 +24,6 @@ concerns[flag] {
     flag := {
         "category": "Critical",
         "label": "Invalid VM Name",
-        "assessment": "Kubernetes only supports names that follow DNS subdomain name as defined in RFC 1123. This means that the name can contain lowercase letters (a-z), numbers (0-9), and hyphens (-), up to a maximum of 64 characters. The first and last characters must be alphanumeric. The name must not contain uppercase letters, spaces, periods (.), or special characters."
+        "assessment": "The VM name must comply with the DNS subdomain name format defined in RFC 1123. The name can contain lowercase letters (a-z), numbers (0-9), and hyphens (-), up to a maximum of 64 characters. The first and last characters must be alphanumeric. The name must not contain uppercase letters, spaces, periods (.), or special characters."
     }
 }

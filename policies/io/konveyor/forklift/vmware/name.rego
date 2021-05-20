@@ -9,11 +9,11 @@ valid_input = false {
 }
 
 valid_vm = true {
-    is_string(input.name)
+    is_string(input.io.konveyor.forklift.vmware.name)
 }
 
 valid_vm_name = true {
-    regex.match("^[a-z0-9][a-z0-9-]*[a-z0-9]$", input.name)
+    regex.match("^[a-z0-9][a-z0-9-]*[a-z0-9]$", input.io.konveyor.forklift.vmware.name)
     count(input.name) <= 64
 }
 

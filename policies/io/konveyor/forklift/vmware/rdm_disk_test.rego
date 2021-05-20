@@ -5,7 +5,7 @@ test_with_no_disks {
         "name": "test",
         "disks": []
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -16,7 +16,7 @@ test_with_no_shareable_disk {
             { "rdm": false }
         ]
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -27,6 +27,6 @@ test_with_shareable_disk {
             { "rdm": true }
         ]
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 1
 }

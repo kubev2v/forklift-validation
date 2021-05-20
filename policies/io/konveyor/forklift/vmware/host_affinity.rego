@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 has_host_affinity {
     some i
-    data.io.konveyor.forklift.vmware.vm.host.cluster.hostAffinityVms[i].id == data.io.konveyor.forklift.vmware.vm.id
+    input.host.cluster.hostAffinityVms[i].id == input.id
 }
 
 concerns[flag] {

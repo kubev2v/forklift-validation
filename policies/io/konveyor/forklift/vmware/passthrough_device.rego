@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 has_passthrough_device {
     some i
-    data.io.konveyor.forklift.vmware.vm.devices[i].kind == "VirtualPCIPassthrough"
+    input.devices[i].kind == "VirtualPCIPassthrough"
 }
 
 concerns[flag] {

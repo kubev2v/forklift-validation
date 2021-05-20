@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 has_rdm_disk {
     some i
-    data.io.konveyor.forklift.vmware.vm.disks[i].rdm
+    input.disks[i].rdm
 }
 
 concerns[flag] {

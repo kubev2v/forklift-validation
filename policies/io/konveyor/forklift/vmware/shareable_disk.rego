@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 has_shareable_disk {
     some i
-    data.io.konveyor.forklift.vmware.vm.disks[i].shared
+    input.disks[i].shared
 }
 
 concerns[flag] {

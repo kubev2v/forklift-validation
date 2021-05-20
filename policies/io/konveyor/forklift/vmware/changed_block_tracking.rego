@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 change_tracking_disabled {
-    data.io.konveyor.forklift.vmware.vm.changeTrackingEnabled == false
+    input.changeTrackingEnabled == false
 }
 
 concerns[flag] {

@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_fault_tolerance_enabled {
-    data.io.konveyor.forklift.vmware.vm.faultToleranceEnabled
+    input.faultToleranceEnabled
 }
 
 concerns[flag] {

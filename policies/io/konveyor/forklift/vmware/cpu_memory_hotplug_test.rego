@@ -7,7 +7,7 @@ test_with_hotplug_disabled {
         "cpuHotRemoveEnabled": false,
         "memoryHotAddEnabled": false
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -18,7 +18,7 @@ test_with_cpu_hot_add_enabled {
         "cpuHotRemoveEnabled": false,
         "memoryHotAddEnabled": false
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 1
 }
 
@@ -29,7 +29,7 @@ test_with_cpu_hot_remove_enabled {
         "cpuHotRemoveEnabled": true,
         "memoryHotAddEnabled": false
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 1
 }
 
@@ -40,6 +40,6 @@ test_with_memory_hot_add_enabled {
         "cpuHotRemoveEnabled": false,
         "memoryHotAddEnabled": true
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 1
 }

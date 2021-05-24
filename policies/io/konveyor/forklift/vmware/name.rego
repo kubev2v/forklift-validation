@@ -13,7 +13,7 @@ valid_vm = true {
 }
 
 valid_vm_name = true {
-    regex.match("^[a-z0-9][a-z0-9-]*[a-z0-9]$", data.io.konveyor.forklift.vmware.name)
+    regex.match("^[a-z0-9][a-z0-9-]*[a-z0-9]$", input.name)
     count(input.name) <= 64
 }
 

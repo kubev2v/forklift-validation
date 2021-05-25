@@ -8,7 +8,7 @@ test_with_no_snapshot {
             "id": ""
         },
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -20,6 +20,6 @@ test_with_snapshot {
             "id": "snapshot-3134"
         },
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 1
 }

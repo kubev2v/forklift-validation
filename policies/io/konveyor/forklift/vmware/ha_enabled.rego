@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_ha_enabled {
-    data.io.konveyor.forklift.vmware.vm.host.cluster.dasEnabled
+    input.host.cluster.dasEnabled
 }
 
 concerns[flag] {

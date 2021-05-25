@@ -3,15 +3,15 @@ package io.konveyor.forklift.vmware
 default has_hotplug_enabled = false
 
 has_hotplug_enabled = true {
-    data.io.konveyor.forklift.vmware.vm.cpuHotAddEnabled == true
+    input.cpuHotAddEnabled == true
 }
 
 has_hotplug_enabled = true {
-    data.io.konveyor.forklift.vmware.vm.cpuHotRemoveEnabled == true
+    input.cpuHotRemoveEnabled == true
 }
 
 has_hotplug_enabled = true {
-    data.io.konveyor.forklift.vmware.vm.memoryHotAddEnabled == true
+    input.memoryHotAddEnabled == true
 }
 
 concerns[flag] {

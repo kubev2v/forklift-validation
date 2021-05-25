@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_numa_node_affinity {
-    count(data.io.konveyor.forklift.vmware.vm.numaNodeAffinity) != 0
+    count(input.numaNodeAffinity) != 0
 }
 
 concerns[flag] {

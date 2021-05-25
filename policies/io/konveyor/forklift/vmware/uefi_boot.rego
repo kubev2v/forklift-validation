@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_uefi_boot {
-    data.io.konveyor.forklift.vmware.vm.firmware == "efi"
+    input.firmware == "efi"
 }
 
 concerns[flag] {

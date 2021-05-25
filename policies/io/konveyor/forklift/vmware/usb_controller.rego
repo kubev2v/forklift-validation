@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 has_usb_controller {
     some i
-    data.io.konveyor.forklift.vmware.vm.devices[i].kind == "VirtualUSBController"
+    input.devices[i].kind == "VirtualUSBController"
 }
 
 concerns[flag] {

@@ -2,18 +2,18 @@
 
 When running as the `forklift-validation` pod in OpenShift, the rules can be called by making an https POST call to `<pod>/v1/data/io/konveyor/forklift/vmware/validate`
 
-The call must provide a JSON payload containing the VMware provider namespace and name, and VM Managed Object Reference, in the following format:
+The call must provide a JSON payload containing the VMware VM "workload" details from the forklift inventory, in the following format:
 
 ```
 {
-   "input": {
-      "provider": {
-        "namespace": "openshift-migration",
-        "name": "test"
-      },
-      "vm_moref": "vm-431"
-    }
-}
+    "input": {    
+        "selfLink": "providers/vsphere/73195853-3daf-4063-8c0d-da8ee56f0af4/workloads/vm-431",
+        "id": "vm-431",
+        "parent": {
+            "kind": "Folder",
+            "id": "group-v22"
+        },
+...
 ```
 
 The return is a JSON structure containing the concerns relevant to that VM, for example:

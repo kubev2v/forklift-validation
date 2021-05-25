@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_cpu_affinity {
-    count(data.io.konveyor.forklift.vmware.vm.cpuAffinity) != 0
+    count(input.cpuAffinity) != 0
 }
 
 concerns[flag] {

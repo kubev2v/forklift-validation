@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_dpm_enabled {
-    data.io.konveyor.forklift.vmware.vm.host.cluster.dpmEnabled
+    input.host.cluster.dpmEnabled
 }
 
 concerns[flag] {

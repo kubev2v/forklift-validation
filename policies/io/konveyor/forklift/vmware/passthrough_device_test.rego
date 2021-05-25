@@ -5,7 +5,7 @@ test_with_no_device {
         "name": "test",
         "devices": []
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -16,7 +16,7 @@ test_with_other_xyz_device {
             { "kind": "VirtualXYZEthernetCard" }
         ]
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -27,6 +27,6 @@ test_with_pci_passthrough_device {
             { "kind": "VirtualPCIPassthrough" }
         ]
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 1
 }

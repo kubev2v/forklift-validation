@@ -2,7 +2,7 @@ package io.konveyor.forklift.vmware
 
 has_sriov_device {
     some i
-    data.io.konveyor.forklift.vmware.vm.devices[i].kind == "VirtualSriovEthernetCard"
+    input.devices[i].kind == "VirtualSriovEthernetCard"
 }
 
 concerns[flag] {

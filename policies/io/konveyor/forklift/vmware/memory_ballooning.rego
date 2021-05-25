@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_ballooned_memory {
-    data.io.konveyor.forklift.vmware.vm.balloonedMemory > 0
+    input.balloonedMemory > 0
 }
 
 concerns[flag] {

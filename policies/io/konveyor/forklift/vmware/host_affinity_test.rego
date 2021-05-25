@@ -12,7 +12,7 @@ test_without_host_affinity_vms {
             }
         }
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -37,7 +37,7 @@ test_with_other_host_affinity_vms {
             }
         }
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -58,6 +58,6 @@ test_with_host_affinity_vm {
             }
         }
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 1
 }

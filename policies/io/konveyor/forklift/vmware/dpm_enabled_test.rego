@@ -12,7 +12,7 @@ test_without_dpm_enabled {
             }
         }
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 0
 }
 
@@ -28,6 +28,6 @@ test_with_dpm_enabled {
             }
         }
     }
-    results := concerns with data.io.konveyor.forklift.vmware.vm as mock_vm
+    results := concerns with input as mock_vm
     count(results) == 1
 }

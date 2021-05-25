@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_snapshot {
-    data.io.konveyor.forklift.vmware.vm.snapshot.kind == "VirtualMachineSnapshot"
+    input.snapshot.kind == "VirtualMachineSnapshot"
 }
 
 concerns[flag] {

@@ -5,16 +5,16 @@ default valid_vm      = false
 default valid_vm_name = false
 
 valid_input = false {
-    is_null(data.io.konveyor.forklift.vmware.vm)
+    is_null(input)
 }
 
 valid_vm = true {
-    is_string(data.io.konveyor.forklift.vmware.vm.name)
+    is_string(input.name)
 }
 
 valid_vm_name = true {
-    regex.match("^[a-z0-9][a-z0-9-]*[a-z0-9]$", data.io.konveyor.forklift.vmware.vm.name)
-    count(data.io.konveyor.forklift.vmware.vm.name) <= 64
+    regex.match("^[a-z0-9][a-z0-9-]*[a-z0-9]$", input.name)
+    count(input.name) <= 64
 }
 
 concerns[flag] {

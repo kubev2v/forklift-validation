@@ -1,7 +1,7 @@
 package io.konveyor.forklift.vmware
 
 has_drs_enabled {
-    data.io.konveyor.forklift.vmware.vm.host.cluster.drsEnabled
+    input.host.cluster.drsEnabled
 }
 
 concerns[flag] {

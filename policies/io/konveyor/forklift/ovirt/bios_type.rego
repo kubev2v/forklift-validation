@@ -3,7 +3,7 @@ package io.konveyor.forklift.ovirt
 default valid_bios = false
 
 valid_bios = true {
-    regex.match("i440fx_sea_bios|q35_secure_boot", input.bios)
+    regex.match(`i440fx_sea_bios|q35_secure_boot`, input.bios)
 }
 
 concerns[flag] {

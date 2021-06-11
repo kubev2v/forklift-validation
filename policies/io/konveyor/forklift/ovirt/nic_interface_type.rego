@@ -4,7 +4,7 @@ default valid_nic_interface_type = false
 
 valid_nic_interface_type = true {
     some i
-    regex.match("e1000|rtl8139|virtio", input.nics[i].interface)
+    regex.match(`e1000|rtl8139|virtio`, input.nics[i].interface)
 }
 
 concerns[flag] {

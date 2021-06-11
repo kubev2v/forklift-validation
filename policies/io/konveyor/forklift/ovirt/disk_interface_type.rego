@@ -4,7 +4,7 @@ default valid_disk_interface_type = false
 
 valid_disk_interface_type = true {
     some i
-    regex.match("sata|virtio_scsi|virtio", input.diskAttachments[i].interface)
+    regex.match(`sata|virtio_scsi|virtio`, input.diskAttachments[i].interface)
 }
 
 concerns[flag] {

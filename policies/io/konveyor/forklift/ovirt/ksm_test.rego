@@ -2,10 +2,8 @@ package io.konveyor.forklift.ovirt
  
 test_without_ksm_enabled {
     mock_vm := { "name": "test",
-                 "host": {
-                    "cluster": {
-                        "ksmEnabled": false
-                    }
+                 "cluster": {
+                      "ksmEnabled": false
                   }
                 }
     results = concerns with input as mock_vm
@@ -14,10 +12,8 @@ test_without_ksm_enabled {
 
 test_with_ksm_enabled {
     mock_vm := { "name": "test",
-                 "host": {
-                    "cluster": {
-                        "ksmEnabled": true
-                    }
+                 "cluster": {
+                      "ksmEnabled": true
                   }
                 }
     results = concerns with input as mock_vm

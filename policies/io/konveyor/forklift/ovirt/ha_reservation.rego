@@ -3,7 +3,7 @@ package io.konveyor.forklift.ovirt
 default has_ha_reservation = false
 
 has_ha_reservation = value {
-    value := input.host.cluster.haReservation
+    value := input.cluster.haReservation
 }
 
 concerns[flag] {

@@ -1,14 +1,17 @@
 package io.konveyor.forklift.ovirt
 
-default valid_nic_interface_type = false
-
-valid_nic_interface_type = true {
+valid_nic_interfaces [i] {
     some i
     regex.match(`e1000|rtl8139|virtio`, input.nics[i].interface)
 }
 
+number_of_nics [i] {
+    some i
+    input.nics[i].interface
+}
+
 concerns[flag] {
-    not valid_nic_interface_type
+    count(valid_nic_interfaces) != count(number_of_nics)
     flag := {
         "category": "Critical",
         "label": "Unsupported NIC interface type detected",

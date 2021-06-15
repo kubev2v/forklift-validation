@@ -37,7 +37,9 @@ test_with_invalid_disk_interface_type {
     mock_vm := {
         "name": "test",
         "diskAttachments": [
-            { "interface": "ide" }
+            { "interface": "virtio" },
+            { "interface": "ide" },
+            { "interface": "virtio" }
         ]
     }
     results := concerns with input as mock_vm

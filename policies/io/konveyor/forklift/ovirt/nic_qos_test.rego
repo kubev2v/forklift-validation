@@ -18,6 +18,9 @@ test_with_qos {
         "name": "test",
         "nics": [
             { "profile": {
+                "qos": "" }
+            },
+            { "profile": {
                 "qos": "something" }
             }
         ]

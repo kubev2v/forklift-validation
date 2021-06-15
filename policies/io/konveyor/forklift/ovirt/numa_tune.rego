@@ -1,6 +1,8 @@
 package io.konveyor.forklift.ovirt
 
-has_numa_affinity {
+default has_numa_affinity = false
+
+has_numa_affinity = true {
     count(input.numaNodeAffinity) != 0
 }
 

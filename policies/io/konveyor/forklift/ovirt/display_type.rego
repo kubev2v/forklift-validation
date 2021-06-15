@@ -1,6 +1,8 @@
 package io.konveyor.forklift.ovirt
 
-has_spice_display_enabled {
+default has_spice_display_enabled = false
+
+has_spice_display_enabled = true {
     input.display == "spice"
 }
 

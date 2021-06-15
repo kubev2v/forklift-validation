@@ -1,7 +1,9 @@
 package io.konveyor.forklift.ovirt
 
-has_ballooned_memory {
-    input.balloonedMemory
+default has_ballooned_memory = false
+
+has_ballooned_memory = value {
+    value := input.balloonedMemory
 }
 
 concerns[flag] {

@@ -1,6 +1,8 @@
 package io.konveyor.forklift.ovirt
 
-storage_error_resume_behaviour {
+default storage_error_resume_behaviour = false
+
+storage_error_resume_behaviour = true {
     input.storageErrorResumeBehaviour != "auto_resume"
 }
 

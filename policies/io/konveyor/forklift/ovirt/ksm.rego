@@ -1,7 +1,9 @@
 package io.konveyor.forklift.ovirt
 
-has_ksm_enabled {
-    input.host.cluster.ksmEnabled
+default has_ksm_enabled = false
+
+has_ksm_enabled = value {
+    value := input.host.cluster.ksmEnabled
 }
 
 concerns[flag] {

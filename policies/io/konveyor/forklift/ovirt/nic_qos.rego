@@ -1,14 +1,12 @@
 package io.konveyor.forklift.ovirt
 
-default has_nic_with_qos_enabled = false
-
-has_nic_with_qos_enabled = true {
+nics_with_qos_enabled [i] {
     some i
     input.nics[i].profile.qos != ""
 }
 
 concerns[flag] {
-    has_nic_with_qos_enabled
+    count(nics_with_qos_enabled) > 0
     flag := {
         "category": "Warning",
         "label": "NIC with QoS settings detected",

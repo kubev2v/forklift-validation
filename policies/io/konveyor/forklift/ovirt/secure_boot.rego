@@ -1,11 +1,13 @@
 package io.konveyor.forklift.ovirt
 
-has_secure_boot_enabled {
+default secure_boot_enabled = false
+
+secure_boot_enabled = true {
     input.bios == "q35_secure_boot"
 }
 
 concerns[flag] {
-    has_secure_boot_enabled
+    secure_boot_enabled
     flag := {
         "category": "Warning",
         "label": "UEFI secure boot detected",

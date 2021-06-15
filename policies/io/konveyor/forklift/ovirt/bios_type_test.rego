@@ -15,7 +15,8 @@ test_with_second_valid_bios {
         "bios": "q35_secure_boot"
     }
     results := concerns with input as mock_vm
-    count(results) == 0
+    # There should only be one result returned, from the 'secure_boot' rule.
+    count(results) == 1
 }
 
 test_with_invalid_bios {

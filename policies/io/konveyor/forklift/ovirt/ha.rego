@@ -1,7 +1,9 @@
 package io.konveyor.forklift.ovirt
 
-has_ha_enabled {
-    input.haEnabled
+default has_ha_enabled = false
+
+has_ha_enabled = value {
+   value :=  input.haEnabled
 }
 
 concerns[flag] {

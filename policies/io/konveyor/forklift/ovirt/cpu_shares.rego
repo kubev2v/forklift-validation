@@ -1,6 +1,8 @@
 package io.konveyor.forklift.ovirt
 
-has_cpushares_enabled {
+default has_cpushares_enabled = false
+
+has_cpushares_enabled = true {
     input.cpuShares > 0
 }
 

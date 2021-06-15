@@ -1,12 +1,12 @@
 package io.konveyor.forklift.ovirt
 
-shared_disks [i] {
+disks_with_scsi_reservation [i] {
     some i
-    input.diskAttachments[i].disk.shared == true
+    input.diskAttachments[i].scsiReservation == true
 }
 
 concerns[flag] {
-    count(shared_disks) > 0
+    count(disks_with_scsi_reservation) > 0
     flag := {
         "category": "Warning",
         "label": "Shared disk detected",

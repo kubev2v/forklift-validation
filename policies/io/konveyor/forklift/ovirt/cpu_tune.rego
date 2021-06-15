@@ -1,6 +1,8 @@
 package io.konveyor.forklift.ovirt
 
-has_cpu_affinity {
+default has_cpu_affinity = false
+
+has_cpu_affinity = true {
     count(input.cpuAffinity) != 0
 }
 

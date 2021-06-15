@@ -1,6 +1,8 @@
 package io.konveyor.forklift.ovirt
 
-has_iothreads_enabled {
+default has_iothreads_enabled = false
+
+has_iothreads_enabled = true {
     input.ioThreads > 1
 }
 

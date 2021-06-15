@@ -1,6 +1,8 @@
 package io.konveyor.forklift.ovirt
 
-has_host_devices {
+default has_host_devices = false
+
+has_host_devices = true {
     count(input.hostDevices) != 0
 }
 

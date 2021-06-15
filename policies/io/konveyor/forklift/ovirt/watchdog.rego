@@ -1,6 +1,8 @@
 package io.konveyor.forklift.ovirt
 
-has_watchdog_enabled {
+default has_watchdog_enabled = false
+
+has_watchdog_enabled = true {
     count(input.watchDogs) != 0
 }
 

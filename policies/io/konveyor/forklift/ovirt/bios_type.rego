@@ -1,13 +1,19 @@
 package io.konveyor.forklift.ovirt
 
 default valid_bios = false
+default legal_bios = false
 
 valid_bios = true {
+    is_string(input.bios)
+}
+
+legal_bios = true {
     regex.match(`i440fx_sea_bios|q35_secure_boot`, input.bios)
 }
 
 concerns[flag] {
-    not valid_bios
+    valid_bios
+    not legal_bios
     flag := {
         "category": "Critical",
         "label": "BIOS type is not supported by the target cluster",

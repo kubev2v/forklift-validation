@@ -1,7 +1,9 @@
 package io.konveyor.forklift.ovirt
 
-has_illegal_images {
-    input.hasIllegalImages
+default has_illegal_images = false
+
+has_illegal_images = value {
+    value := input.hasIllegalImages
 }
 
 concerns[flag] {

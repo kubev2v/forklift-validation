@@ -1,14 +1,12 @@
 package io.konveyor.forklift.ovirt
 
-default unplugged_nic = false
-
-unplugged_nic = true {
+unplugged_nics [i] {
     some i
     input.nics[i].plugged == false
 }
 
 concerns[flag] {
-    unplugged_nic
+    count(unplugged_nics) > 0
     flag := {
         "category": "Warning",
         "label": "Unplugged NIC detected",

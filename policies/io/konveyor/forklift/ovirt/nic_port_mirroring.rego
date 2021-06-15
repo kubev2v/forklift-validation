@@ -1,14 +1,12 @@
 package io.konveyor.forklift.ovirt
 
-default has_nic_port_mirroring_enabled = false
-
-has_nic_port_mirroring_enabled = true {
+nics_with_port_mirroring_enabled [i] {
     some i
     input.nics[i].profile.portMirroring == true
 }
 
 concerns[flag] {
-    has_nic_port_mirroring_enabled
+    count(nics_with_port_mirroring_enabled) > 0
     flag := {
         "category": "Warning",
         "label": "NIC with port mirroring detected",

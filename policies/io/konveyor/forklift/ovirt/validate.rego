@@ -1,4 +1,4 @@
-package io.konveyor.forklift.vmware
+package io.konveyor.forklift.ovirt
 
 validate = {
     "rules_version": RULES_VERSION,

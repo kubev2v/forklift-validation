@@ -1,8 +1,8 @@
 # Konveyor > Forklift > Validation Rules
 
-When running as the `forklift-validation` pod in OpenShift, the rules can be called by making an https POST call to `<pod>/v1/data/io/konveyor/forklift/vmware/validate`
+When running as the `forklift-validation` pod in OpenShift, the rules can be called by making an https POST call to `<pod>/v1/data/io/konveyor/forklift/<provider>/validate`, where <provider> is "vmware" or "ovirt"
 
-The call must provide a JSON payload containing the VMware VM "workload" details from the forklift inventory, in the following format:
+The call must provide a JSON payload containing the provider VM "workload" details from the forklift inventory, in the following format:
 
 ```
 {
@@ -63,7 +63,7 @@ An error in the JSON body of the POST request will be returned as:
 }
 ```
 
-The rules versions can be queried by making a GET to `<pod>/v1/data/io/konveyor/forklift/vmware/rules_version`
+The rules versions can be queried by making a GET to `<pod>/v1/data/io/konveyor/forklift/<provider>/rules_version`
 
 This will return a JSON structure such as:
 

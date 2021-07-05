@@ -3,7 +3,7 @@ package io.konveyor.forklift.ovirt
 default has_boot_menu_enabled = false
 
 has_boot_menu_enabled = value {
-    value := input.bios.boot_menu.enabled
+    value := input.bootMenuEnabled
 }
 
 concerns[flag] {

@@ -3,7 +3,7 @@ package io.konveyor.forklift.ovirt
 default secure_boot_enabled = false
 
 secure_boot_enabled = true {
-    input.bios.type == "q35_secure_boot"
+    input.bios == "q35_secure_boot"
 }
 
 concerns[flag] {

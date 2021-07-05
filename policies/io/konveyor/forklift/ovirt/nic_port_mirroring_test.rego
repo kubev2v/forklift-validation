@@ -1,11 +1,21 @@
 package io.konveyor.forklift.ovirt
 
+# NIC tests contain the attributes to match each and all of the NIC rules
+
 test_without_port_mirroring {
     mock_vm := {
         "name": "test",
         "nics": [
-            { "profile": {
-                "portMirroring": false }
+            {
+                "id" : "656e7031-7330-3030-3a31-613a34613a31",
+                "interface": "e1000",
+                "plugged": true,
+                "properties": [],
+                "profile": {
+                    "portMirroring": false,
+                    "networkFilter": "",
+                    "qos": ""
+                }
             }
         ]
     }
@@ -17,11 +27,27 @@ test_with_port_mirroring {
     mock_vm := {
         "name": "test",
         "nics": [
-            { "profile": {
-                "portMirroring": true }
+            {
+                "id" : "656e7031-7330-3030-3a31-613a34613a31",
+                "interface": "e1000",
+                "plugged": true,
+                "properties": [],
+                "profile": {
+                    "portMirroring": false,
+                    "networkFilter": "",
+                    "qos": ""
+                }
             },
-            { "profile": {
-                "portMirroring": false }
+            {
+                "id" : "656e7031-7330-3030-3a31-613a34613a32",
+                "interface": "e1000",
+                "plugged": true,
+                "properties": [],
+                "profile": {
+                    "portMirroring": true,
+                    "networkFilter": "",
+                    "qos": ""
+                }
             }
         ]
     }

@@ -1,33 +1,27 @@
-package io.konveyor.forklift.vmware
+package io.konveyor.forklift.ovirt
 
-test_with_no_disks {
+test_with_first_valid_status {
     mock_vm := {
         "name": "test",
-        "disks": []
+        "status": "up"
     }
     results := concerns with input as mock_vm
     count(results) == 0
 }
 
-test_with_no_shareable_disk {
+test_with_second_valid_status {
     mock_vm := {
         "name": "test",
-        "disks": [
-            { "rdm": false }
-        ]
+        "status": "down"
     }
     results := concerns with input as mock_vm
     count(results) == 0
 }
 
-test_with_shareable_disk {
+test_with_invalid_status {
     mock_vm := {
         "name": "test",
-        "disks": [
-            { "rdm": false },
-            { "rdm": true },
-            { "rdm": false }
-        ]
+        "status": "paused"
     }
     results := concerns with input as mock_vm
     count(results) == 1

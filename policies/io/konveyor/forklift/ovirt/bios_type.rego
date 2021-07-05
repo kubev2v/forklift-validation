@@ -8,7 +8,7 @@ valid_bios_string = true {
 }
 
 legal_bios = true {
-    regex.match(`i440fx_sea_bios|q35_secure_boot`, input.bios)
+    regex.match(`i440fx_sea_bios|q35_secure_boot|q35_sea_bios`, input.bios)
 }
 
 concerns[flag] {

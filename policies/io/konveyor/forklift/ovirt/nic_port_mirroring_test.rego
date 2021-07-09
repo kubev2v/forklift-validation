@@ -10,11 +10,11 @@ test_without_port_mirroring {
                 "id" : "656e7031-7330-3030-3a31-613a34613a31",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": []
                 }
             }
         ]
@@ -31,22 +31,22 @@ test_with_port_mirroring {
                 "id" : "656e7031-7330-3030-3a31-613a34613a31",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": []
                 }
             },
             {
                 "id" : "656e7031-7330-3030-3a31-613a34613a32",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [],
                 "profile": {
                     "portMirroring": true,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": []
                 }
             }
         ]

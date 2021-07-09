@@ -10,11 +10,11 @@ test_without_nic_custom_properties {
                 "id" : "656e7031-7330-3030-3a31-613a34613a31",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": [],
                 }
             }
         ]
@@ -31,16 +31,16 @@ test_with_nic_custom_properties {
                 "id" : "656e7031-7330-3030-3a31-613a34613a31",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [
-                    {
-                      "name" : "duplex",
-                      "value" : "full"
-                    }
-                ],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": [
+                        {
+                          "name" : "duplex",
+                          "value" : "full"
+                        }
+                    ],
                 }
             }
         ]

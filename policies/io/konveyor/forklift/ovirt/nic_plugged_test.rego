@@ -10,11 +10,11 @@ test_with_one_plugged_nic {
                 "id" : "656e7031-7330-3030-3a31-613a34613a31",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": []
                 }
             }
         ]
@@ -31,22 +31,22 @@ test_with_two_plugged_nics {
                 "id" : "656e7031-7330-3030-3a31-613a34613a31",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": []
                 }
             },
             {
                 "id" : "656e7031-7330-3030-3a31-613a34613a32",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": []
                 }
             }
         ]
@@ -63,22 +63,22 @@ test_with_unplugged_nic {
                 "id" : "656e7031-7330-3030-3a31-613a34613a31",
                 "interface": "e1000",
                 "plugged": true,
-                "properties": [],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": []
                 }
             },
             {
                 "id" : "656e7031-7330-3030-3a31-613a34613a32",
                 "interface": "e1000",
                 "plugged": false,
-                "properties": [],
                 "profile": {
                     "portMirroring": false,
                     "networkFilter": "",
-                    "qos": ""
+                    "qos": "",
+                    "properties": []
                 }
             }
         ]

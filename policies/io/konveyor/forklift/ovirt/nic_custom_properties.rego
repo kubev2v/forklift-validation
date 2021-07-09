@@ -3,7 +3,7 @@ package io.konveyor.forklift.ovirt
 default vnic_has_custom_properties = false
 
 vnic_has_custom_properties = true {
-    count(input.nics[i].properties) != 0
+    count(input.nics[i].profile.properties) != 0
 }
 
 concerns[flag] {

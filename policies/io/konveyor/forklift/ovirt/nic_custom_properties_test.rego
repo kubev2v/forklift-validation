@@ -14,7 +14,7 @@ test_without_nic_custom_properties {
                     "portMirroring": false,
                     "networkFilter": "",
                     "qos": "",
-                    "properties": [],
+                    "properties": []
                 }
             }
         ]
@@ -40,7 +40,7 @@ test_with_nic_custom_properties {
                           "name" : "duplex",
                           "value" : "full"
                         }
-                    ],
+                    ]
                 }
             }
         ]

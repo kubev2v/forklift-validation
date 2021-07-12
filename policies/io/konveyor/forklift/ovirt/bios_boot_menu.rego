@@ -10,7 +10,7 @@ concerns[flag] {
     has_boot_menu_enabled
     flag := {
         "category": "Information",
-        "label": "VM has bios boot menu enabled",
-        "assessment": "The VM has a bios boot menu enabled. This is not currently supported by OpenShift Virtualization."
+        "label": "VM has BIOS boot menu enabled",
+        "assessment": "The VM has a BIOS boot menu enabled. This is not currently supported by OpenShift Virtualization."
     }
 }

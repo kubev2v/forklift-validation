@@ -11,6 +11,6 @@ concerns[flag] {
     flag := {
         "category": "Critical",
         "label": "Watchdog detected",
-        "assessment": "The VM is configured with a watchdog device, and these devices not currently supported by OpenShift Virtualization. The VM will not be migrated."
+        "assessment": "The VM is configured with a watchdog device, which is not currently supported by OpenShift Virtualization. The VM will not be migrated."
     }
 }

@@ -15,7 +15,7 @@ concerns[flag] {
     flag := {
         "category": "Critical",
         "label": "Unsupported NIC interface type detected",
-        "assessment": "The NIC interface type is not supported by OpenShift Virtualization (only e1000, rtl8139 & virtio interface types are currently supported). The VM will not be migrated."
+        "assessment": "The NIC interface type is not supported by OpenShift Virtualization (only e1000, rtl8139 and virtio interface types are currently supported). The VM will not be migrated."
     }
 }
 

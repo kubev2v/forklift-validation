@@ -10,7 +10,7 @@ concerns[flag] {
     flag := {
         "category": "Critical",
         "label": "NIC with host device passthrough detected",
-        "assessment": "The VM is using a vNIC Profile configured for host device passthrough. This is not currently supported by OpenShift Virtualization. The VM will not be migrated."
+        "assessment": "The VM is using a vNIC profile configured for host device passthrough, which is not currently supported by OpenShift Virtualization. The VM will not be migrated."
     }
 }
 

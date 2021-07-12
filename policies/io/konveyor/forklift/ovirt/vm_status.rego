@@ -17,6 +17,6 @@ concerns[flag] {
     flag := {
         "category": "Critical",
         "label": "VM has a status condition that prevents migration",
-        "assessment": "The VM's status condition is not one of 'up' or 'down'. The VM will not be migrated."
+        "assessment": "The VM's status is not 'up' or 'down'. The VM will not be migrated."
     }
 }

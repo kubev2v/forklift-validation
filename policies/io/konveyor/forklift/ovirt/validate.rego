@@ -7,6 +7,6 @@ validate = {
 }
 
 errors[message] {
-    not valid_vm
+    not valid_vm_string
     message := "No VM name found in input body"
 }

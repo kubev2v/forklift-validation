@@ -24,7 +24,9 @@ test_with_shareable_disk {
     mock_vm := {
         "name": "test",
         "disks": [
-            { "shared": true }
+            { "shared": false },
+            { "shared": true },
+            { "shared": false }
         ]
     }
     results := concerns with input as mock_vm

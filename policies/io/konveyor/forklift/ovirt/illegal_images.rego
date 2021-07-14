@@ -11,6 +11,6 @@ concerns[flag] {
     flag := {
         "category": "Critical",
         "label": "Illegal disk images detected",
-        "assessment": "The VM has one or more snapshots with disks in ILLEGAL state. This is not currently supported by OpenShift Virtualization."
+        "assessment": "The VM has one or more snapshots with disks in ILLEGAL state. This is not currently supported by OpenShift Virtualization. The VM will not be migrated."
     }
 }

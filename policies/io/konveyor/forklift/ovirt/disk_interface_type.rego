@@ -7,7 +7,7 @@ valid_disk_interfaces [i] {
 
 number_of_disks [i] {
     some i
-    input.diskAttachments[i].interface
+    input.diskAttachments[i].id
 }
 
 concerns[flag] {
@@ -15,6 +15,6 @@ concerns[flag] {
     flag := {
         "category": "Critical",
         "label": "Unsupported disk interface type detected",
-        "assessment": "The disk interface type is not supported by OpenShift Virtualization (only sata, virtio_scsi & virtio interface types are currently supported). The disk will not function in the migrated VM."
+        "assessment": "The disk interface type is not supported by OpenShift Virtualization (only sata, virtio_scsi and virtio interface types are currently supported). The VM will not be migrated."
     }
 }

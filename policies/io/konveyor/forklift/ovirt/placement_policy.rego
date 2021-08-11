@@ -11,6 +11,6 @@ concerns[flag] {
     flag := {
         "category": "Warning",
         "label": "Placement policy affinity",
-        "assessment": "The VM has a placement policy affinity setting that requires live migration to be enabled in OpenShift Virtualization for compatibility. The VM's persistent volume modes must also be set to RWX."
+        "assessment": "The VM has a placement policy affinity setting that requires live migration to be enabled in OpenShift Virtualization for compatibility. The target storage classes must also support RWX access mode."
     }
 }

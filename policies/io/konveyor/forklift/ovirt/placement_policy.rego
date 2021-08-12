@@ -1,22 +1,16 @@
 package io.konveyor.forklift.ovirt
 
-default valid_placement_policy_affinity_string = false
-default legal_placement_policy_affinity = false
+default warn_placement_policy = false
 
-valid_placement_policy_affinity_string = true {
-    is_string(input.placementPolicyAffinity)
-}
-
-legal_placement_policy_affinity = true {
-    regex.match(`user_migratable|pinned`, input.placementPolicyAffinity)
+warn_placement_policy = true {
+    regex.match(`\bmigratable\b`, input.placementPolicyAffinity)
 }
 
 concerns[flag] {
-    valid_placement_policy_affinity_string
-    not legal_placement_policy_affinity
+    warn_placement_policy
     flag := {
-        "category": "Critical",
+        "category": "Warning",
         "label": "Placement policy affinity",
-        "assessment": "The VM has a placement policy affinity setting that is incompatible with OpenShift Virtualization. The VM will not be migrated."
+        "assessment": "The VM has a placement policy affinity setting that requires live migration to be enabled in OpenShift Virtualization for compatibility. The target storage classes must also support RWX access mode."
     }
 }

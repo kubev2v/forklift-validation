@@ -9,7 +9,7 @@ test_without_host_devices {
 test_with_host_devices {
     mock_vm := { "name": "test",
                  "hostDevices": [
-                    { "some": "thing" }
+                    { "capability": "thing" }
                   ]
                 }
     results = concerns with input as mock_vm

@@ -9,7 +9,7 @@ has_host_devices = true {
 concerns[flag] {
     has_host_devices
     flag := {
-        "category": "Information",
+        "category": "Warning",
         "label": "VM has mapped host devices",
         "assessment": "The VM is configured with hardware devices mapped from the host. This functionality is not currently supported by OpenShift Virtualization."
     }

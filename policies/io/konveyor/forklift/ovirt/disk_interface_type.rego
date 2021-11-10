@@ -13,8 +13,8 @@ number_of_disks [i] {
 concerns[flag] {
     count(valid_disk_interfaces) != count(number_of_disks)
     flag := {
-        "category": "Critical",
+        "category": "Warning",
         "label": "Unsupported disk interface type detected",
-        "assessment": "The disk interface type is not supported by OpenShift Virtualization (only sata, virtio_scsi and virtio interface types are currently supported). The VM will not be migrated."
+        "assessment": "The disk interface type is not supported by OpenShift Virtualization (only sata, virtio_scsi and virtio interface types are currently supported). The migrated VM will be given a virtio disk interface type."
     }
 }

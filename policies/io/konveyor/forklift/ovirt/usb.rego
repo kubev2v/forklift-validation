@@ -9,8 +9,8 @@ has_usb_enabled = value {
 concerns[flag] {
     has_usb_enabled
     flag := {
-        "category": "Critical",
+        "category": "Warning",
         "label": "USB support enabled",
-        "assessment": "The VM has USB support enabled, but USB devices are not currently supported by OpenShift Virtualization. The VM will not be migrated."
+        "assessment": "The VM has USB support enabled, but USB device attachment is not currently supported by OpenShift Virtualization."
     }
 }

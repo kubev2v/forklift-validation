@@ -10,6 +10,6 @@ concerns[flag] {
     flag := {
         "category": "Critical",
         "label": "Unsupported disk storage type detected",
-        "assessment": "The VM has a disk with a storage type other than 'image', and this is not currently supported by OpenShift Virtualization. The VM will not be migrated."
+        "assessment": "The VM has a disk with a storage type other than 'image', which is not currently supported by OpenShift Virtualization. The VM disk transfer is likely to fail."
     }
 }

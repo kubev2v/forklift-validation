@@ -9,8 +9,8 @@ has_watchdog_enabled = true {
 concerns[flag] {
     has_watchdog_enabled
     flag := {
-        "category": "Critical",
+        "category": "Warning",
         "label": "Watchdog detected",
-        "assessment": "The VM is configured with a watchdog device, which is not currently supported by OpenShift Virtualization. The VM will not be migrated."
+        "assessment": "The VM is configured with a watchdog device, which is not currently supported by OpenShift Virtualization. A watchdog device will not be present in the destination VM."
     }
 }

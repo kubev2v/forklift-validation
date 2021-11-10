@@ -16,7 +16,7 @@ concerns[flag] {
     not legal_vm_status
     flag := {
         "category": "Critical",
-        "label": "VM has a status condition that prevents migration",
-        "assessment": "The VM's status is not 'up' or 'down'. The VM will not be migrated."
+        "label": "VM has a status condition that may prevent successful migration",
+        "assessment": "The VM's status is not 'up' or 'down'. Attempting to migrate this VM may fail."
     }
 }

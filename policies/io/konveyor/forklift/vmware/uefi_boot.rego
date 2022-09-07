@@ -7,8 +7,8 @@ has_uefi_boot {
 concerns[flag] {
     has_uefi_boot
     flag := {
-        "category": "Critical",
+        "category": "Warning",
         "label": "UEFI secure boot detected",
-        "assessment": "UEFI secure boot is not currently supported by OpenShift Virtualization. The VM cannot be migrated unless UEFI secure boot is disabled."
+        "assessment": "UEFI secure boot is enabled. NVRAM data is not copied during the migration and thus the VM might not boot on OpenShift Virtualization."
     }
 }
